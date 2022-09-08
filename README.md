@@ -7,11 +7,9 @@ You need to pass 4 parameters:
 - max_items_per_tr: the maximum number of items that each transactions contains
 - num_of_mis_defined: the total number of MIS(i) = ... defined before having MIS(rest) =  ... (it needs to be less than the number of items)
 
-
-'''bash
-
+```
 python TestCaseGenerator.py 20 100 15 10
 
-bash'''
+```
 
 will generate two files: input_data.txt and input_params.txt filled with the information above 
