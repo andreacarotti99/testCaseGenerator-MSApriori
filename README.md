@@ -9,7 +9,6 @@ You need to pass 4 parameters:
 
 ```
 python TestCaseGenerator.py 20 100 15 10
-
 ```
 
 will generate two files: input_data.txt and input_params.txt filled with the information above 
