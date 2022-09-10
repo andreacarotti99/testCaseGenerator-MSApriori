@@ -22,20 +22,25 @@ def check_param(num_of_items, num_of_transactions, max_items_per_tr, num_of_mis_
 
 def generate_input_data(num_of_transactions, max_items_per_tr, num_of_items, num_of_mis_defined):
 
-    with open('input_data.txt', 'w') as f:
-        for i in range(num_of_transactions):
+    with open('input_data_6.txt', 'w') as f:
+        for i in range(num_of_transactions-1):
             # max_items_per_tr = random.randint(1, max_items_per_tr)
             tr = create_transaction(max_items_per_tr, num_of_items)
             for j in range(len(tr)-1):
                 f.write(str(tr[j]) + ", ")
             f.write(str(tr[-1]) + "\n")
             tr.clear()
+        tr = create_transaction(max_items_per_tr, num_of_items)
+        for j in range(len(tr)-1):
+            f.write(str(tr[j]) + ", ")
+        f.write(str(tr[-1]))
 
 
-    with open('input_param.txt', 'w') as f:
+
+    with open('input_param_6.txt', 'w') as f:
         for i in range(num_of_mis_defined):
-            f.write("MIS(" + str(i+1) + ") = " + str(random.randint(1, 100)/100) + "\n")
-        f.write("MIS(rest) = " + str(random.randint(1, 100)/100) + "\n")
+            f.write("MIS(" + str(i+1) + ") = " + str(random.randint(1, 50)/100) + "\n")
+        f.write("MIS(rest) = " + str(random.randint(1, 50)/100) + "\n")
         f.write("SDC = " + str(random.randint(1, 100)/100))
 
 # Press the green button in the gutter to run the script.
