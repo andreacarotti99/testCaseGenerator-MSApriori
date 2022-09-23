@@ -22,7 +22,7 @@ def check_param(num_of_items, num_of_transactions, max_items_per_tr, num_of_mis_
 
 def generate_input_data(num_of_transactions, max_items_per_tr, num_of_items, num_of_mis_defined):
 
-    with open('input_data_6.txt', 'w') as f:
+    with open('input_data.txt', 'w') as f:
         for i in range(num_of_transactions-1):
             # max_items_per_tr = random.randint(1, max_items_per_tr)
             tr = create_transaction(max_items_per_tr, num_of_items)
@@ -37,7 +37,7 @@ def generate_input_data(num_of_transactions, max_items_per_tr, num_of_items, num
 
 
 
-    with open('input_param_6.txt', 'w') as f:
+    with open('input_param.txt', 'w') as f:
         for i in range(num_of_mis_defined):
             f.write("MIS(" + str(i+1) + ") = " + str(random.randint(1, 50)/100) + "\n")
         f.write("MIS(rest) = " + str(random.randint(1, 50)/100) + "\n")
@@ -49,6 +49,10 @@ if __name__ == '__main__':
     num_of_transactions = int(sys.argv[2])
     max_items_per_tr = int(sys.argv[3])
     num_of_mis_defined = int(sys.argv[4])
+
+    if len(sys.argv) is not 5:
+        print("Incorrect number of parameters!")
+        print("Please provide: num_of_items, num_of_transactions, max_items_per_transaction, num_of_mis")
 
     check_param(num_of_items, num_of_transactions, max_items_per_tr, num_of_mis_defined)
     generate_input_data(num_of_transactions, max_items_per_tr, num_of_items, num_of_mis_defined)
