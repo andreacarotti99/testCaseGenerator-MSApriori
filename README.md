@@ -1,3 +1,7 @@
+# Test Case Generator for MSApriori Algorithm
+This is a simple test case generator for the course CS583 - Data Mining and Text Mining @ University of Illinois Chicago.
+The MSApriori implementation can be found in this repository: https://github.com/marco66colombo/data_miming_hw1
+
 # Generate a Test Case
 
 You need to pass 4 parameters:
